@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - José Cortés Martínez</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap' );
-        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -17,20 +18,20 @@
             --gray: #64748b;
             --light-gray: #e2e8f0;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--dark);
             line-height: 1.6;
             background-color: #f1f5f9;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 40px auto;
@@ -40,14 +41,14 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         .background-pattern {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 radial-gradient(var(--light-gray) 1px, transparent 1px),
                 radial-gradient(var(--light-gray) 1px, transparent 1px);
             background-size: 20px 20px;
@@ -55,7 +56,7 @@
             opacity: 0.3;
             z-index: 0;
         }
-        
+
         .header {
             position: relative;
             display: flex;
@@ -64,7 +65,7 @@
             padding: 40px;
             z-index: 1;
         }
-        
+
         .header::before {
             content: '';
             position: absolute;
@@ -75,12 +76,12 @@
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1 )"/></svg>');
             background-size: 100% 100%;
         }
-        
+
         .profile-container {
             position: relative;
             margin-right: 40px;
         }
-        
+
         .profile-img {
             width: 180px;
             height: 180px;
@@ -90,11 +91,11 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
-        
+
         .profile-img:hover {
             transform: scale(1.05);
         }
-        
+
         .profile-outline {
             position: absolute;
             top: -10px;
@@ -105,37 +106,42 @@
             border: 2px dashed rgba(255, 255, 255, 0.5);
             animation: rotate 20s linear infinite;
         }
-        
+
         @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
-        
+
         .header-content {
             flex: 1;
         }
-        
+
         .header-content h1 {
             font-size: 2.8rem;
             font-weight: 700;
             margin-bottom: 5px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
-        
+
         .header-content h2 {
             font-size: 1.5rem;
             font-weight: 500;
             margin-bottom: 20px;
             opacity: 0.9;
         }
-        
+
         .contact-info {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: center;
@@ -145,17 +151,17 @@
             backdrop-filter: blur(5px);
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
-        
+
         .contact-item:hover {
             transform: translateY(-3px);
             background-color: rgba(255, 255, 255, 0.3);
         }
-        
+
         .contact-item i {
             margin-right: 10px;
             font-size: 1.1rem;
         }
-        
+
         .main-content {
             position: relative;
             display: grid;
@@ -164,12 +170,12 @@
             padding: 40px;
             z-index: 1;
         }
-        
+
         .section {
             margin-bottom: 30px;
             position: relative;
         }
-        
+
         .section-title {
             position: relative;
             font-size: 1.5rem;
@@ -179,7 +185,7 @@
             padding-bottom: 10px;
             display: inline-block;
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -190,17 +196,17 @@
             background: linear-gradient(to right, var(--primary), var(--secondary));
             border-radius: 3px;
         }
-        
+
         .section-content {
             text-align: justify;
             position: relative;
         }
-        
+
         .section-content p {
             margin-bottom: 15px;
             line-height: 1.7;
         }
-        
+
         .experience-item {
             position: relative;
             padding-left: 30px;
@@ -209,11 +215,11 @@
             padding-bottom: 10px;
             transition: transform 0.3s ease;
         }
-        
+
         .experience-item:hover {
             transform: translateX(5px);
         }
-        
+
         .experience-item::before {
             content: '';
             position: absolute;
@@ -226,38 +232,38 @@
             border: 2px solid white;
             box-shadow: 0 0 0 2px var(--primary);
         }
-        
+
         .experience-title {
             font-weight: 600;
             color: var(--primary-dark);
             margin-bottom: 5px;
         }
-        
+
         .experience-description {
             color: var(--dark);
             font-size: 0.95rem;
         }
-        
+
         .skill-container {
             margin-bottom: 25px;
         }
-        
+
         .skill-header {
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
         }
-        
+
         .skill-name {
             font-weight: 500;
             color: var(--dark);
         }
-        
+
         .skill-percentage {
             color: var(--gray);
             font-weight: 500;
         }
-        
+
         .skill-bar {
             height: 8px;
             background-color: var(--light-gray);
@@ -265,7 +271,7 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         .skill-progress {
             height: 100%;
             background: linear-gradient(to right, var(--primary), var(--secondary));
@@ -273,7 +279,7 @@
             position: relative;
             transition: width 1.5s ease-in-out;
         }
-        
+
         .skill-progress::after {
             content: '';
             position: absolute;
@@ -281,25 +287,28 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.2) 25%,
-                transparent 25%,
-                transparent 50%,
-                rgba(255, 255, 255, 0.2) 50%,
-                rgba(255, 255, 255, 0.2) 75%,
-                transparent 75%,
-                transparent
-            );
+            background: linear-gradient(45deg,
+                    rgba(255, 255, 255, 0.2) 25%,
+                    transparent 25%,
+                    transparent 50%,
+                    rgba(255, 255, 255, 0.2) 50%,
+                    rgba(255, 255, 255, 0.2) 75%,
+                    transparent 75%,
+                    transparent);
             background-size: 15px 15px;
             animation: move 1s linear infinite;
         }
-        
+
         @keyframes move {
-            0% { background-position: 0 0; }
-            100% { background-position: 15px 0; }
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 15px 0;
+            }
         }
-        
+
         .language-item {
             display: flex;
             justify-content: space-between;
@@ -310,17 +319,17 @@
             border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .language-item:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .language-name {
             font-weight: 500;
             color: var(--dark);
         }
-        
+
         .language-level {
             padding: 5px 10px;
             border-radius: 4px;
@@ -329,13 +338,13 @@
             color: white;
             background: linear-gradient(to right, var(--primary), var(--secondary));
         }
-        
+
         .interests-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
-        
+
         .interest-item {
             display: flex;
             align-items: center;
@@ -344,17 +353,17 @@
             border-radius: 50px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .interest-item:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .interest-item i {
             margin-right: 8px;
             color: var(--primary);
         }
-        
+
         .certification-item {
             position: relative;
             padding: 15px;
@@ -363,29 +372,29 @@
             border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .certification-item:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .certification-title {
             font-weight: 600;
             color: var(--primary-dark);
             margin-bottom: 5px;
         }
-        
+
         .certification-issuer {
             font-size: 0.9rem;
             color: var(--gray);
             margin-bottom: 5px;
         }
-        
+
         .certification-date {
             font-size: 0.8rem;
             color: var(--gray);
         }
-        
+
         .footer {
             text-align: center;
             padding: 20px;
@@ -394,66 +403,88 @@
             font-size: 0.9rem;
             border-top: 1px solid var(--light-gray);
         }
-        
+
         @media (max-width: 992px) {
             .main-content {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
-            
+
             .profile-container {
                 margin-right: 0;
                 margin-bottom: 30px;
             }
-            
+
             .contact-info {
                 justify-content: center;
             }
         }
-        
+
         /* Animaciones */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         .section {
             animation: fadeIn 0.8s ease forwards;
         }
-        
-        .section:nth-child(1) { animation-delay: 0.1s; }
-        .section:nth-child(2) { animation-delay: 0.2s; }
-        .section:nth-child(3) { animation-delay: 0.3s; }
-        .section:nth-child(4) { animation-delay: 0.4s; }
-        .section:nth-child(5) { animation-delay: 0.5s; }
-        
+
+        .section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .section:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .section:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
         /* Efectos de hover para elementos interactivos */
         .section-title:hover::after {
             background: linear-gradient(to left, var(--primary), var(--secondary));
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="background-pattern"></div>
-        
+
         <div class="header">
             <div class="profile-container">
                 <div class="profile-outline"></div>
                 <img src="mejorada.png" alt="José Cortés Martínez" class="profile-img">
             </div>
-            
+
             <div class="header-content">
                 <h1>JOSÉ CORTÉS MARTÍNEZ</h1>
-                <h2>Ingeniero en Sistemas Computacionales</h2>
-                
+                <h2>Ingeniero en Sistemas Computacionales (Titulación en trámite)</h2>
+
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -461,7 +492,7 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>5664003317</span>
+                        <span>2741011737</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -470,17 +501,24 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="main-content">
             <div class="left-column">
                 <div class="section">
                     <h2 class="section-title">PERFIL PROFESIONAL</h2>
                     <div class="section-content">
-                        <p>Estudiante de octavo semestre de Ingeniería en Sistemas Computacionales con sólidos conocimientos en desarrollo de software, bases de datos y metodologías ágiles. Mi experiencia abarca desde el desarrollo de aplicaciones móviles hasta proyectos innovadores que implementan realidad aumentada y virtual. Me caracterizo por mi capacidad para resolver problemas complejos, trabajar eficientemente en equipo y adaptarme rápidamente a nuevas tecnologías.</p>
-                        <p>Busco una oportunidad de residencia profesional donde pueda aplicar mis conocimientos en inteligencia artificial y desarrollo de software, contribuyendo con soluciones tecnológicas innovadoras mientras continúo mi crecimiento profesional.</p>
+                        <p>Egresado de Ingeniería en Sistemas Computacionales (cédula profesional en trámite) con
+                            sólidos conocimientos en desarrollo de software, bases de datos y metodologías ágiles. Mi
+                            experiencia abarca desde el desarrollo de aplicaciones móviles hasta proyectos innovadores
+                            que implementan realidad aumentada y virtual, además de haber culminado exitosamente mi
+                            residencia profesional. Me caracterizo por mi capacidad para resolver problemas complejos,
+                            trabajar eficientemente en equipo y adaptarme rápidamente a nuevas tecnologías.</p>
+                        <p>Busco una oportunidad profesional donde pueda aplicar mis conocimientos en inteligencia
+                            artificial y desarrollo de software, contribuyendo con soluciones tecnológicas innovadoras
+                            mientras continúo mi crecimiento profesional.</p>
                     </div>
                 </div>
-                
+
                 <div class="section">
                     <h2 class="section-title">FORMACIÓN ACADÉMICA</h2>
                     <div class="section-content">
@@ -488,53 +526,84 @@
                             <h3 class="experience-title">Ingeniería en Sistemas Computacionales</h3>
                             <p class="experience-description">
                                 <strong>Instituto Tecnológico Superior de Atlixco</strong><br>
-                                8° semestre (en curso)<br>
-                                Fecha esperada de graduación: Enero 2026
+                                Créditos completados - Residencia profesional culminada<br>
+                                <br>
+                                Cédula profesional en trámite
                             </p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="section">
                     <h2 class="section-title">EXPERIENCIA EN PROYECTOS</h2>
                     <div class="section-content">
                         <div class="experience-item">
-                            <h3 class="experience-title">Sistema de lenguaje de señas mexicano</h3>
+                            <h3 class="experience-title">Sistema de monitoreo y alertas para equipos industriales</h3>
                             <p class="experience-description">
-                                Desarrollo de un innovador sistema que implementa realidad aumentada y virtual, proporcionando una herramienta accesible para la comunicación inclusiva.
+                                Servicio de sincronización y monitoreo industrial desarrollado en <strong>C# y .NET
+                                </strong> que consume <strong>API REST</strong> para extraer parámetros de
+                                máquinas en tiempo real (vibraciones, temperatura, etc). Implementa integración
+                                con <strong>MySQL y NHibernate</strong> para persistencia de datos, gestión de alarmas
+                                automáticas basadas en umbrales configurables, historial para auditoría de
+                                cambios.
                             </p>
                         </div>
-                        
+
+                        <div class="experience-item">
+                            <h3 class="experience-title">Sistema de lenguaje de señas mexicano</h3>
+                            <p class="experience-description">
+                                Desarrollo de un sistema innovador que implementa <strong>realidad aumentada (AR) y
+                                    realidad virtual (VR)</strong> para el aprendizaje y práctica del lenguaje de señas
+                                mexicano. El proyecto incluye reconocimiento de gestos en tiempo real, animaciones 3D
+                                interactivas, proporcionando una herramienta accesible
+                                y tecnológica para la comunicación inclusiva.
+                            </p>
+                        </div>
+
                         <div class="experience-item">
                             <h3 class="experience-title">Simulador de consumo eléctrico</h3>
                             <p class="experience-description">
-                                Creación de una aplicación utilizando C# y .NET que permite a los usuarios monitorear y optimizar su gasto energético con interfaces intuitivas y reportes detallados.
+                                Aplicación de escritorio desarrollada en <strong>C# y .NET Framework</strong>
                             </p>
                         </div>
-                        
+
                         <div class="experience-item">
                             <h3 class="experience-title">Sistema de biblioteca</h3>
                             <p class="experience-description">
-                                Implementación de un sistema completo con SQL Server para la gestión de préstamos y catálogo, incluyendo funcionalidades de búsqueda avanzada y reportes.
+                                Sistema integral de gestión bibliotecaria desarrollado con <strong>SQL Server</strong>
                             </p>
                         </div>
-                        
+
                         <div class="experience-item">
                             <h3 class="experience-title">Sistema de apartado de salas de laboratorio</h3>
                             <p class="experience-description">
-                                Desarrollo de una aplicación Android con integración de servicios AWS para la gestión eficiente de espacios académicos en tiempo real.
+                                Aplicación móvil <strong>Android</strong> con integración de <strong>servicios AWS
+                                </strong> para la reservación y gestión de espacios
+                                académicos en tiempo real. Implementa <strong>autenticación biométrica mediante huella
+                                    digital</strong> para mayor seguridad, sistema de notificaciones push, calendario
+                                interactivo, validación de disponibilidad en tiempo real, y panel administrativo para la
+                                gestión de reservas.
                             </p>
                         </div>
-                        
+
                         <div class="experience-item">
-                            <h3 class="experience-title">Otros proyectos</h3>
+                            <h3 class="experience-title">Convertidor de código C a C#</h3>
                             <p class="experience-description">
-                                Convertidor de código de C a C# y página web de viajes, demostrando versatilidad en diferentes entornos de programación y diseño.
+                                Herramienta de transpilación desarrollada en <strong>Python</strong> que analiza
+                                sintaxis de código C y genera el equivalente en C#, implementando análisis léxico y
+                                sintáctico mediante expresiones regulares y árboles.
+                            </p>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3 class="experience-title">Página web de viajes</h3>
+                            <p class="experience-description">
+                                Sitio web responsive desarrollado con <strong>HTML, CSS y JavaScript</strong>,
                             </p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="section">
                     <h2 class="section-title">CERTIFICACIONES</h2>
                     <div class="section-content">
@@ -543,18 +612,18 @@
                             <p class="certification-issuer">Oracle</p>
                             <p class="certification-date">Noviembre 2023</p>
                         </div>
-                        
+
                         <div class="certification-item">
                             <h3 class="certification-title">Introducción a la Seguridad Cibernética</h3>
                             <p class="certification-issuer">Cisco Networking Academy</p>
                         </div>
-                        
+
                         <div class="certification-item">
                             <h3 class="certification-title">Gestión de Proyectos basado en PMBOK</h3>
                             <p class="certification-issuer">Tecbrin SRL</p>
                             <p class="certification-date">Septiembre 2024</p>
                         </div>
-                        
+
                         <div class="certification-item">
                             <h3 class="certification-title">Gestión de Proyectos</h3>
                             <p class="certification-issuer">BSG Institute</p>
@@ -563,7 +632,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="right-column">
                 <div class="section">
                     <h2 class="section-title">HABILIDADES TÉCNICAS</h2>
@@ -571,23 +640,23 @@
                         <div class="skill-container">
                             <div class="skill-header">
                                 <span class="skill-name">JavaScript</span>
-                                <span class="skill-percentage">90%</span>
+                                <span class="skill-percentage">85%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%;"></div>
+                                <div class="skill-progress" style="width: 85%;"></div>
                             </div>
                         </div>
-                        
+
                         <div class="skill-container">
                             <div class="skill-header">
                                 <span class="skill-name">C#</span>
-                                <span class="skill-percentage">95%</span>
+                                <span class="skill-percentage">85%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%;"></div>
+                                <div class="skill-progress" style="width: 85%;"></div>
                             </div>
                         </div>
-                        
+
                         <div class="skill-container">
                             <div class="skill-header">
                                 <span class="skill-name">Python</span>
@@ -597,7 +666,7 @@
                                 <div class="skill-progress" style="width: 85%;"></div>
                             </div>
                         </div>
-                        
+
                         <div class="skill-container">
                             <div class="skill-header">
                                 <span class="skill-name">Java</span>
@@ -607,17 +676,17 @@
                                 <div class="skill-progress" style="width: 80%;"></div>
                             </div>
                         </div>
-                        
+
                         <div class="skill-container">
                             <div class="skill-header">
                                 <span class="skill-name">SQL</span>
-                                <span class="skill-percentage">90%</span>
+                                <span class="skill-percentage">85%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%;"></div>
+                                <div class="skill-progress" style="width: 85%;"></div>
                             </div>
                         </div>
-                        
+
                         <div class="skill-container">
                             <div class="skill-header">
                                 <span class="skill-name">Android Studio</span>
@@ -627,7 +696,7 @@
                                 <div class="skill-progress" style="width: 85%;"></div>
                             </div>
                         </div>
-                        
+
                         <div class="skill-container">
                             <div class="skill-header">
                                 <span class="skill-name">AWS</span>
@@ -637,7 +706,7 @@
                                 <div class="skill-progress" style="width: 75%;"></div>
                             </div>
                         </div>
-                        
+
                         <div class="skill-container">
                             <div class="skill-header">
                                 <span class="skill-name">Scrum</span>
@@ -649,33 +718,36 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="section">
                     <h2 class="section-title">HABILIDADES BLANDAS</h2>
                     <div class="section-content">
                         <div class="experience-item">
                             <h3 class="experience-title">Trabajo en equipo</h3>
                             <p class="experience-description">
-                                Capacidad para colaborar eficientemente en equipos multidisciplinarios, aportando ideas y contribuyendo activamente para alcanzar objetivos comunes.
+                                Capacidad para colaborar eficientemente en equipos multidisciplinarios, aportando ideas
+                                y contribuyendo activamente para alcanzar objetivos comunes.
                             </p>
                         </div>
-                        
+
                         <div class="experience-item">
                             <h3 class="experience-title">Comunicación efectiva</h3>
                             <p class="experience-description">
-                                Habilidad para expresar conceptos técnicos complejos de manera clara y accesible para diferentes audiencias.
+                                Habilidad para expresar conceptos técnicos complejos de manera clara y accesible para
+                                diferentes audiencias.
                             </p>
                         </div>
-                        
+
                         <div class="experience-item">
                             <h3 class="experience-title">Resolución de problemas</h3>
                             <p class="experience-description">
-                                Enfoque analítico y creativo para abordar desafíos técnicos y encontrar soluciones eficientes e innovadoras.
+                                Enfoque analítico y creativo para abordar desafíos técnicos y encontrar soluciones
+                                eficientes e innovadoras.
                             </p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="section">
                     <h2 class="section-title">IDIOMAS</h2>
                     <div class="section-content">
@@ -689,7 +761,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="section">
                     <h2 class="section-title">INTERESES PROFESIONALES</h2>
                     <div class="section-content">
@@ -713,27 +785,31 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="section">
                     <h2 class="section-title">OBJETIVOS PROFESIONALES</h2>
                     <div class="section-content">
-                        <p>Mi objetivo a corto plazo es especializarme en el campo de la inteligencia artificial, enfocándome en el desarrollo y aplicación de modelos de aprendizaje automático y procesamiento del lenguaje natural. Aspiro a contribuir en proyectos que impulsen soluciones inteligentes y eficientes, alineadas con las necesidades actuales del mercado y la sociedad.</p>
+                        <p>Mi objetivo a corto plazo es especializarme en el campo de la inteligencia artificial,
+                            enfocándome en el desarrollo y aplicación de modelos de aprendizaje automático y
+                            procesamiento del lenguaje natural. Aspiro a contribuir en proyectos que impulsen soluciones
+                            inteligentes y eficientes, alineadas con las necesidades actuales del mercado y la sociedad.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script>
         // Animación para las barras de progreso de habilidades
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const skillBars = document.querySelectorAll('.skill-progress');
-            
+
             // Inicialmente ocultar las barras
             skillBars.forEach(bar => {
                 const width = bar.style.width;
                 bar.style.width = '0';
-                
+
                 // Mostrar animación después de un pequeño retraso
                 setTimeout(() => {
                     bar.style.width = width;
@@ -742,4 +818,5 @@
         });
     </script>
 </body>
+
 </html>
